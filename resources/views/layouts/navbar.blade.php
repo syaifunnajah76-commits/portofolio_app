@@ -7,6 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="navbar-nav ms-auto">
                 <a class="nav-link {{ Route::is('beranda') ? 'active text-info' : '' }}" href="{{ route('beranda') }}">Beranda</a>
+                <a class="nav-link {{ Route::is('kategori.*') ? 'active text-info' : '' }}" href="{{ route('kategori.index') }}">Kategori</a>
                 <a class="nav-link {{ Route::is('karya.*') ? 'active text-info' : '' }}" href="{{ route('karya.index') }}">Eksplorasi Karya</a>
             </div>
         </div>

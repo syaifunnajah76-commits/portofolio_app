@@ -10,9 +10,7 @@ Route::get('/beranda', function () {
     return view('welcome');
 })->name('beranda');
 
-Route::get('/karya', function () {
-    return view('karya.index');
-})->name('karya.index');
+Route::get('/karya', [App\Http\Controllers\KaryaController::class, 'index'])->name('karya.index');
 
 Route::get('/karya/create', function () {
     return view('karya.create');

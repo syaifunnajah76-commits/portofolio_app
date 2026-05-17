@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'tambah karya')
+@section('title', 'Tambah Karya')
 
 @section('content')
     <div class="row justify-content-center">
@@ -23,33 +23,38 @@
 
                         <div class="mb-3">
                             <label class="form-label text-info fw-bold">Judul Proyek</label>
-                            <input type="text" name="judul" class="form-control bg-dark text-white border-0"
-                                value="{{ old('judul') }}" placeholder="Masukkan nama proyek">
+                            <!-- Name dan old() disesuaikan menjadi 'title' -->
+                            <input type="text" name="title" class="form-control bg-dark text-white border-0"
+                                value="{{ old('title') }}" placeholder="Masukkan nama proyek">
                         </div>
 
-                        {{-- <div class="mb-3">
+                        <div class="mb-3">
                             <label class="form-label text-info fw-bold">Kategori Teknologi</label>
                             <select name="category_id" class="form-select bg-dark text-white border-0" required>
                                 <option value="">-- Pilih Kategori --</option>
                                 @foreach ($semua_kategori as $kat)
                                     <option value="{{ $kat->id }}"
                                         {{ old('category_id') == $kat->id ? 'selected' : '' }}>
-                                        {{ $kat->nama_kategori }}
+                                        <!-- Properti kategori disesuaikan -->
+                                        {{ $kat->name_category }}
                                     </option>
                                 @endforeach
                             </select>
-                        </div> --}}
+                        </div>
 
                         <div class="mb-3">
                             <label class="form-label text-info fw-bold">Unggah Gambar / Screenshot</label>
-                            <input type="file" name="gambar" class="form-control bg-dark text-white border-0"
-                                accept="image/*">
+                            <!-- Name disesuaikan menjadi 'image' -->
+                            <input type="file" name="image" class="form-control bg-dark text-white border-0"
+                                accept="image/*" required>
                             <small class="text-muted">Format: JPG, PNG, WEBP. Maksimal 2MB.</small>
                         </div>
+
                         <div class="mb-4">
                             <label class="form-label text-info fw-bold">Deskripsi Lengkap</label>
-                            <textarea name="deskripsi" class="form-control bg-dark text-white border-0" rows="4"
-                                placeholder="Jelaskan rincian fitur sistem">{{ old('deskripsi') }}</textarea>
+                            <!-- Name dan old() disesuaikan menjadi 'description' -->
+                            <textarea name="description" class="form-control bg-dark text-white border-0" rows="4"
+                                placeholder="Jelaskan rincian fitur sistem">{{ old('description') }}</textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary w-100 fw-bold">Simpan Karya</button>

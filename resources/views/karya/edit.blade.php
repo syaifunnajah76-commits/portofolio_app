@@ -22,7 +22,8 @@
                 <form action="{{ route('karya.update', $karya->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                     <div class="mb-3">
+
+                    <div class="mb-3">
                         <label class="form-label text-warning fw-bold">Judul Proyek</label>
                         <input type="text" name="title" class="form-control bg-dark text-white border-0" value="{{ old('title', $karya->title) }}">
                     </div>
@@ -38,16 +39,18 @@
                         </select>
                     </div>
 
-<div class="mb-3">
-        <label class="form-label text-warning fw-bold">Unggah Gambar Baru (Opsional)</label>
+                    <div class="mb-3">
+                        <label class="form-label text-warning fw-bold">Unggah Gambar Baru (Opsional)</label>
 
-        <div class="mb-2">
-            <img src="{{ asset('storage/karya/' . $karya->image) }}" alt="Preview" class="img-thumbnail" width="150">
-        </div>
+                        <div class="mb-2">
+                            <!-- Perbaikan path gambar di sini -->
+                            <img src="{{ asset('images/' . $karya->image) }}" alt="Preview" class="img-thumbnail border-warning" style="height: 150px; object-fit: cover;">
+                        </div>
 
-        <input type="file" name="image" class="form-control bg-dark text-white border-0" accept="image/*">
-        <small class="text-muted">Biarkan kosong jika tidak ingin mengubah image lama.</small>
-    </div>
+                        <input type="file" name="image" class="form-control bg-dark text-white border-0" accept="image/*">
+                        <small class="text-white-50">Biarkan kosong jika tidak ingin mengubah image lama.</small>
+                    </div>
+
                     <div class="mb-4">
                         <label class="form-label text-warning fw-bold">Deskripsi Lengkap</label>
                         <textarea name="description" class="form-control bg-dark text-white border-0" rows="4">{{ old('description', $karya->description) }}</textarea>

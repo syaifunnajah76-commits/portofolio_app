@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KaryaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -10,10 +11,10 @@ Route::get('/beranda', function () {
     return view('welcome');
 })->name('beranda');
 
-Route::get('/karya', [App\Http\Controllers\KaryaController::class, 'index'])->name('karya.index');
-Route::get('/karya/{id}', [App\Http\Controllers\KaryaController::class, 'show'])->name('karya.show');
-Route::get('/karya/create', [App\Http\Controllers\KaryaController::class, 'create'])->name('karya.create');
-Route::post('/karya/store', [App\Http\Controllers\KaryaController::class, 'store'])->name('karya.store');
-Route::get('/karya/{id}/edit', [App\Http\Controllers\KaryaController::class, 'edit'])->name('karya.edit');
-Route::put('/karya/{id}', [App\Http\Controllers\KaryaController::class, 'update'])->name('karya.update');
-Route::delete('/karya/{id}', [App\Http\Controllers\KaryaController::class, 'destroy'])->name('karya.destroy');
+Route::get('/karya', [KaryaController::class, 'index'])->name('karya.index');
+Route::get('/karya/create', [KaryaController::class, 'create'])->name('karya.create'); // <-- Statis di atas
+Route::post('/karya', [KaryaController::class, 'store'])->name('karya.store'); // <-- URL lebih bersih
+Route::get('/karya/{id}', [KaryaController::class, 'show'])->name('karya.show'); // <-- Dinamis di bawah
+Route::get('/karya/{id}/edit', [KaryaController::class, 'edit'])->name('karya.edit');
+Route::put('/karya/{id}', [KaryaController::class, 'update'])->name('karya.update');
+Route::delete('/karya/{id}', [KaryaController::class, 'destroy'])->name('karya.destroy');

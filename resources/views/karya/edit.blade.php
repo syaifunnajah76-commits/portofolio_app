@@ -24,7 +24,7 @@
                     @method('PUT')
                      <div class="mb-3">
                         <label class="form-label text-warning fw-bold">Judul Proyek</label>
-                        <input type="text" name="judul" class="form-control bg-dark text-white border-0" value="{{ old('judul', $karya->judul) }}">
+                        <input type="text" name="title" class="form-control bg-dark text-white border-0" value="{{ old('title', $karya->title) }}">
                     </div>
 
                     <div class="mb-3">
@@ -32,7 +32,7 @@
                         <select name="category_id" class="form-select bg-dark text-white border-0" required>
                             @foreach($semua_kategori as $kat)
                                 <option value="{{ $kat->id }}" {{ old('category_id', $karya->category_id) == $kat->id ? 'selected' : '' }}>
-                                    {{ $kat->nama_kategori }}
+                                    {{ $kat->name_category }}
                                 </option>
                             @endforeach
                         </select>
@@ -42,15 +42,15 @@
         <label class="form-label text-warning fw-bold">Unggah Gambar Baru (Opsional)</label>
 
         <div class="mb-2">
-            <img src="{{ asset('storage/karya/' . $karya->gambar) }}" alt="Preview" class="img-thumbnail" width="150">
+            <img src="{{ asset('storage/karya/' . $karya->image) }}" alt="Preview" class="img-thumbnail" width="150">
         </div>
 
-        <input type="file" name="gambar" class="form-control bg-dark text-white border-0" accept="image/*">
-        <small class="text-muted">Biarkan kosong jika tidak ingin mengubah gambar lama.</small>
+        <input type="file" name="image" class="form-control bg-dark text-white border-0" accept="image/*">
+        <small class="text-muted">Biarkan kosong jika tidak ingin mengubah image lama.</small>
     </div>
                     <div class="mb-4">
                         <label class="form-label text-warning fw-bold">Deskripsi Lengkap</label>
-                        <textarea name="deskripsi" class="form-control bg-dark text-white border-0" rows="4">{{ old('deskripsi', $karya->deskripsi) }}</textarea>
+                        <textarea name="description" class="form-control bg-dark text-white border-0" rows="4">{{ old('description', $karya->description) }}</textarea>
                     </div>
 
                     <button type="submit" class="btn btn-warning w-100 fw-bold text-dark">Perbarui Data Karya</button>

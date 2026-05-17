@@ -25,8 +25,8 @@
 
         <div class="p-3 bg-dark rounded border border-secondary mb-4">
             <h5 class="mb-1 text-muted text-uppercase small font-monospace">Informasi Pengembang</h5>
-            <p class="mb-0 fw-bold fs-5 text-white">{{ $karya->user->name }}</p>
-            <small class="text-info">{{ $karya->user->email }}</small>
+            <p class="mb-0 fw-bold fs-5 text-white">Labib Zuhair Muntasir</p>
+            <small class="text-info">Labiblpc@gmail.com</small>
         </div>
 
         <h4 class="fw-bold text-warning border-bottom border-secondary pb-2 mb-3">Deskripsi Proyek</h4>

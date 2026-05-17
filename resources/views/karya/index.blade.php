@@ -19,10 +19,10 @@
                         <span class="badge bg-dark text-info">{{ $item->category->name_category; }}</span>
                         <small class="text-muted">Author: Labib Zuhair Muntasir</small>
                     </div>
-                    <img src="#" class="card-image-top" style="max-height: 100px; object-fit: cover;" alt="Gambar Karya">
+                    <img src="{{ asset( $item->image) }}" class="card-image-top" style="max-height: 100px; object-fit: cover;" alt="Gambar Karya">
                     <h4 class="fw-bold">{{ $item->title }}</h4>
                     <p class="text-light opacity-75 card-text text-truncate" style="max-width: 500px;">{{ $item->description; }}</p>
-                    <a href="#" class="btn btn-outline-info btn-sm fw-bold w-100 mt-2">Buka Detail Karya &rarr;</a>
+                    <a href="{{ route('karya.show', $item->id) }}" class="btn btn-outline-info btn-sm fw-bold w-100 mt-2">Buka Detail Karya &rarr;</a>
                 </div>
             </div>
         </div>
